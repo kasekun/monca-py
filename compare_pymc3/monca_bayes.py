@@ -1,8 +1,8 @@
 from typing import Dict, List
 from warnings import warn
 
-from helper_types import PosteriorData
-from monca_client import MoncaResponse
+from monca.monca_client import MoncaResponse
+from utils.helper_types import PosteriorData
 
 
 def get_summary_data_ab(monca_response: MoncaResponse) -> Dict[str, float]:

@@ -1,22 +1,20 @@
+import json
 import logging
-from typing import List
+from typing import Dict, List
 
 from matplotlib import pyplot as plt
 
-from helper_types import PosteriorData
-from monca_bayes import get_posterior_data_ab, get_summary_data_ab
-from monca_client import VariantInput
-from monca_handler import MoncaBinomial
-from plotting import generate_posteriors_plot
-from pymc3_bayes import Pymc3Test
-from utils import Color, print_color, timeit
+from monca.monca_client import VariantInput
+from monca.monca_handler import MoncaBinomial
+from utils.helper_types import PosteriorData
+from utils.plotting import generate_posteriors_plot
+from utils.utils import Color, print_color, timeit
+
+from .monca_bayes import get_posterior_data_ab, get_summary_data_ab
+from .pymc3_bayes import Pymc3Test
 
 logger = logging.getLogger("pymc3")
 logger.propagate = False
-
-
-import json
-from typing import Dict
 
 
 def pretty_print_json(data: Dict):
@@ -58,7 +56,7 @@ def get_pymc3_posteriors(
     return posteriors
 
 
-if __name__ == "__main__":
+def main():
     variant_a = VariantInput("A", is_control=True, enrollments=68130, conversions=2725)
     variant_b = VariantInput("B", is_control=False, enrollments=55901, conversions=2683)
 
@@ -82,3 +80,7 @@ if __name__ == "__main__":
     plt.tight_layout()
     fig.savefig("output/plot.png")
     print_color("saved posterior plot to output/plot.png", Color.CYAN)
+
+
+if __name__ == "__main__":
+    main()

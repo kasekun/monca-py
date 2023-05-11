@@ -1,6 +1,7 @@
 from typing import List
 
-from monca_client import MoncaClient, MoncaRequest, MoncaResponse, VariantInput
+from .monca_client import (MoncaClient, MoncaRequest, MoncaResponse,
+                           VariantInput)
 
 
 class MoncaBinomial:

@@ -1,12 +1,11 @@
-import random
 from typing import Dict, List
 
 import numpy as np
 import pymc3 as pm
 
-from helper_types import PosteriorData
-from monca_client import VariantInput
-from utils import generate_binomial_sample
+from monca.monca_client import VariantInput
+from utils.helper_types import PosteriorData
+from utils.utils import generate_binomial_sample
 
 
 class Pymc3Test:

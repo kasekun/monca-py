@@ -3,8 +3,8 @@ from typing import List, Union
 
 from matplotlib import pyplot as plt
 
-from helper_types import PosteriorData
-from utils import gen_kde_xy
+from utils.helper_types import PosteriorData
+from utils.utils import gen_kde_xy
 
 
 def plot_posterior_onto_axis(
