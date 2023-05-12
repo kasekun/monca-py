@@ -31,7 +31,7 @@ def run_monca(variants: List[VariantInput], return_posteriors=False) -> MoncaRes
     nargs=2,
     type=int,
     required=True,
-    help="Control variant enrollments and conversions",
+    help="Control sample-size and conversions",
 )
 @click.option(
     "-v",
@@ -40,7 +40,7 @@ def run_monca(variants: List[VariantInput], return_posteriors=False) -> MoncaRes
     type=int,
     multiple=True,
     required=True,
-    help="Test variant enrollments and conversions",
+    help="Variant sample-size and conversions",
 )
 @click.option(
     "-o",
